@@ -132,14 +132,13 @@ collection_stats <- function(collection) {
   
   freq_hist$word <- as.character(freq_hist$word)
   
-  tweet <- paste(paste('@',twitter_user, sep=""), "uses", gsub(" ", "", paste("#", token_standard)), "as #NFT token standard.", "The #collection has a #floor price of", floor_price, "ETH and had",n_day_sales, "Sales in the last day.", "#MarketCap is now",market_cap,"#Ethereum",gsub(" ", "", paste("#", freq_hist$word[1])), gsub(" ", "", paste("#", freq_hist$word[2])), gsub(" ", "", paste("#", freq_hist$word[3])),gsub(" ", "", paste("#", freq_hist$word[4])),gsub(" ", "", paste("#", freq_hist$word[5])), gsub(" ", "", paste("#", freq_hist$word[6])),gsub(" ", "", paste("#", freq_hist$word[7])), "#SeaHorseArmy")
+  tweet <- paste("The #collection", paste('@',twitter_user, sep=""), "had",n_day_sales , "Sales in the last day and has now a #floor price of",floor_price, "ETH.", "The weekly average #price is",week_avg_price,"ETH. #MarketCap is now",market_cap,"#Ethereum",gsub(" ", "", paste("#", freq_hist$word[1])), gsub(" ", "", paste("#", freq_hist$word[2])), gsub(" ", "", paste("#", freq_hist$word[3])),gsub(" ", "", paste("#", freq_hist$word[4])),gsub(" ", "", paste("#", freq_hist$word[5])), gsub(" ", "", paste("#", freq_hist$word[6])),gsub(" ", "", paste("#", freq_hist$word[7])), "#SeaHorseArmy")
   return(tweet)
   
 }
 
-
-# Select collection of interest
-collection <- c('boredapeyachtclub','cryptopunks')
+# Select collections of interest
+collection <- c('boredapeyachtclub','decentraland', 'doodles-official', 'sandbox', 'world-of-women-nft', 'veefriends')
 
 for (c in collection){
   tweet <- collection_stats(collection = c)
